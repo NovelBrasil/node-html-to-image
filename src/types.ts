@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Page, PuppeteerLifeCycleEvent, PuppeteerNodeLaunchOptions } from "puppeteer";
 import type { Screenshot } from "./models/Screenshot";
 
@@ -19,7 +20,6 @@ export interface ScreenshotParams {
 export interface StartOptions {
   puppeteerArgs?: PuppeteerNodeLaunchOptions;
   // https://github.com/thomasdondorf/puppeteer-cluster/blob/b5b098aed84b8d2c170b3f9d0ac050f53582df45/src/Cluster.ts#L30
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   puppeteer?: any,
   timeout?: number
 }

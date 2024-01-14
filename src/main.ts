@@ -7,12 +7,12 @@ import { Options, StartOptions, ScreenshotParams } from "./types";
 export class NodeHtml {
   #cluster: Cluster<ScreenshotParams> = undefined
 
-  async start(options: StartOptions) {
+  async start(options?: StartOptions) {
     const {
       puppeteerArgs = {},
       timeout = 30000,
       puppeteer = undefined,
-    } = options;
+    } = options || { puppeteerArgs: {}, timeout: 30000, puppeteer: undefined };
     this.#cluster = await Cluster.launch({
       concurrency: Cluster.CONCURRENCY_CONTEXT,
       maxConcurrency: 2,
@@ -77,11 +77,11 @@ export class NodeHtml {
 
   async stop() {
     if (this.#cluster == undefined) return
-    this.#cluster.close()
+    await this.#cluster.close()
   }
 }
 
-export async function nodeHtmlToImage(options: Options) {
+/*export async function nodeHtmlToImage(options: Options) {
   const {
     html,
     encoding,
@@ -144,4 +144,4 @@ export async function nodeHtmlToImage(options: Options) {
     await cluster.close();
     process.exit(1);
   }
-}
+}*/

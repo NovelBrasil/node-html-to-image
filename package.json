@@ -1,10 +1,10 @@
 {
-  "name": "node-html-to-image",
-  "version": "4.0.0",
+  "name": "@novelbrasil/node-html-to-image",
+  "version": "4.0.9",
   "description": "A Node.js library that generates images from HTML",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "git@github.com:frinyvonnick/node-html-to-image.git",
+  "repository": "git@github.com:NovelBrasil/node-html-to-image.git",
   "author": "FRIN Yvonnick <frin.yvonnick@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
@@ -15,9 +15,11 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint ./src",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "files": [
+    "dist",
     "src",
     "types",
     "!src/*.spec.js"
