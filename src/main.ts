@@ -17,7 +17,7 @@ export class NodeHtml {
       concurrency: Cluster.CONCURRENCY_CONTEXT,
       maxConcurrency: 2,
       timeout,
-      puppeteerOptions: { ...puppeteerArgs, headless: 'new' },
+      puppeteerOptions: { ...puppeteerArgs, headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox'] },
       puppeteer: puppeteer,
     });
   }

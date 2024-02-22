@@ -1,6 +1,6 @@
 {
   "name": "@novelbrasil/node-html-to-image",
-  "version": "4.0.9",
+  "version": "4.1.0",
   "description": "A Node.js library that generates images from HTML",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
